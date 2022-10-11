@@ -11,7 +11,7 @@
  * SOEN 287 Group Project
  * 
  *
- * TEAM MEMBERS
+ * TEAM MEMBERS (add your names below)
  * ------------
  *  
  * 
