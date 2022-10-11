@@ -1,4 +1,4 @@
-# soen287_project
+# SOEN287_project
 /**************************************************
  * 
  * Concordia University
