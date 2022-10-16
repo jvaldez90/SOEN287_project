@@ -1,10 +1,17 @@
+html {
+    background-color: beige;
+}
 #courseTitle {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     color: #820010;
 }
+#addButtons {
+   text-align: center;
+}
 .assessment{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
     text-align: center;
     border: 1px solid black;
     border-collapse: collapse;
@@ -15,6 +22,7 @@
     background-color: gold;
 }
 .assessment td{
+    font-size: 14px;
     padding: 1px 60px;
     border: 1px solid black;
     border-collapse: collapse;
