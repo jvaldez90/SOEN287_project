@@ -21,5 +21,8 @@
  * 
  * Joy Anne Valdez    26339379
  *
+ * Dante Di Domenico
+ *
+ * Sukhdeep Singh Sandhu 40132534
  *
  ***************************************************/
