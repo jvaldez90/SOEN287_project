@@ -1,6 +1,11 @@
 html {
     background-color: beige;
 }
+button {
+    padding: 15px;
+    background-color: maroon;
+    color: white;
+}
 #courseTitle {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
