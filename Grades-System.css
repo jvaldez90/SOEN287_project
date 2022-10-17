@@ -2,9 +2,10 @@ html {
     background-color: beige;
 }
 button {
-    padding: 15px;
+    padding: 10px;
     background-color: maroon;
     color: white;
+    width: 150px;
 }
 #courseTitle {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
