@@ -5,6 +5,7 @@
 - Students can see their marks in assessments 
 - Students can see their final grades
 - Students can see certain statstics such as averages of assessments and exams.
+- Table that includes student names, assignments, grades,etc.
 
 ## sample functionality added
 - ability to calculate averages of students grades ( not weighed yet but functionality to be adeded soon)
