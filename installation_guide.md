@@ -2,6 +2,8 @@
 ## Download and unzip files
 - Step 1) Visit the project repository on github and https://github.com/jvaldez90/SOEN287_project 
 - Step 2) Under "Code" click the drop down arrow and download ZIP file, once downloaded unzip the file/extract files and open in a code editor
+- Step 3) Simply go in the folder where the files were extracted and open up Grades-System.html and it should open it in the internet browser.
+OR
 - Step 3) once downloaded and opened in a code editor, right click the Grades-System.html file and copy path. 
 - Paste the path into an internet browser to see the html and css load up. (It's like this for now simply because there's no functionality added yet and not a lot to deploy)
 
