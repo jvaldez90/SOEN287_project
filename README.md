@@ -17,14 +17,14 @@
  *  
  * Ahmad Al Nabelsi 40209401
  * 
- * Sebastian Vega-Martins
+ * Sebastian Vega-Martins 40191151
  * 
- * Joy Anne Valdez    26339379
+ * Joy Anne Valdez 26339379
  *
- * Dante Di Domenico
+ * Dante Di Domenico 40125704
  *
  * Sukhdeep Singh Sandhu 40132534
  *
- * Justin Selber-Hnatiws
+ * Justin Selber-Hnatiws 40078439
  *
  ***************************************************/
