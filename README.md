@@ -12,7 +12,7 @@
  * FALL 2022
  * 
  *
- * TEAM MEMBERS (add your names below)
+ * TEAM MEMBERS
  * ------------
  *  
  * Ahmad Al Nabelsi
@@ -24,5 +24,7 @@
  * Dante Di Domenico
  *
  * Sukhdeep Singh Sandhu 40132534
+ *
+ * Justin Selber-Hnatiws
  *
  ***************************************************/
