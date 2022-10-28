@@ -1,0 +1,31 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin: .25em;
+    padding: auto;
+}
+.container{
+    display:flex;
+}
+#loginArea {
+    padding: 10em;
+}
+#header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #820010;
+}
+#loginMessage {
+    font-weight: 300;
+    font-size: 1.7em;
+    text-align: left;
+}
+#submitButton {
+    background-color: #820010;
+    color: white;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    padding-left: 6em;
+    padding-right: 6em;
+}
