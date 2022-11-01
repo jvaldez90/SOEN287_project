@@ -1,7 +1,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
-    margin: .25em;
+    margin: 0 auto;
     padding: auto;
 }
 .container{
@@ -13,19 +13,33 @@
 #header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 35px;
-    font-weight: 600;
+    font-weight: 600;      
     color: #820010;
+}
+form {
+    width: 300px;
+    line-height: 2.5;
 }
 #loginMessage {
     font-weight: 300;
     font-size: 1.7em;
     text-align: left;
 }
+#username {
+    width: 290px;
+    height: 20px;
+}
+#password{
+    width: 290px;
+    height: 20px;
+}
 #submitButton {
     background-color: #820010;
     color: white;
     padding-top: .5rem;
     padding-bottom: .5rem;
-    padding-left: 6em;
-    padding-right: 6em;
+    width: 300px;
+}
+#authOption {
+    line-height: 1.5;
 }

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Grade System Login</title>
+        <title>Grades System Sign In</title>
         <link rel="stylesheet" href="./login.css">
+
     </head>
     <body>
         <main class="container">
@@ -11,16 +12,25 @@
                     Concordia University<br/>
                     Grades Management System<br/><br/>
                 </div>
-                <div id="loginMessage">Sign In</div>
                 <form id="loginForm" method="post">
+                    <div id="loginMessage">Sign In</div>
                     <div id="userNameArea">
-                        <input id="username" name="UserName" size="30" type="email" placeholder="Netname">
+                        <input id="username" name="UserName" type="email" placeholder="Netname">
                     </div>
                     <div id="passwordArea">
-                        <input id="passwordInput" name="Password" size="30" type="password" placeholder="Password">
+                        <input id="password" name="Password" type="password" placeholder="Password">
                     </div>
                     <div id="submissionArea">
                         <button id="submitButton" role="button">SIGN IN</button> 
+                    </div>
+                    <div id="authOption">
+                        <a href="" id="resetPassword">
+                            <p>Forgot Password?</p>
+                        </a>
+                        <p>
+                            Sign up as a 
+                            <a href="" id="newAccount">new faculty member</a>
+                        </p>
                     </div>
                 </form>
             </div>
