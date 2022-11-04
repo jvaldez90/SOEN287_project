@@ -16,30 +16,23 @@
     font-weight: 600;      
     color: #820010;
 }
-form {
+#logoutForm {
     width: 300px;
     line-height: 2.5;
 }
-#loginMessage {
+#logoutMessage {
     font-weight: 300;
     font-size: 1.7em;
     text-align: left;
 }
-#email {
-    width: 290px;
-    height: 20px;
+#successMessage {
+    color: green;
 }
-#password{
-    width: 290px;
-    height: 20px;
-}
+
 #submitButton {
     background-color: #820010;
     color: white;
     padding-top: .5rem;
     padding-bottom: .5rem;
     width: 300px;
-}
-#authOption {
-    line-height: 1.5;
 }

@@ -17,7 +17,7 @@ button {
 }
 .assessment{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 15px;
+    font-size: 12px;
     text-align: center;
     border: 1px solid black;
     border-collapse: collapse;
@@ -28,10 +28,24 @@ button {
     background-color: gold;
 }
 .assessment td{
-    font-size: 14px;
-    padding: 1px 60px;
+    font-size: 12px;
+    padding: 1px 50px;
     border: 1px solid black;
     border-collapse: collapse;
+}
+#editButton{
+    background-color: revert;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: revert;
+    width: revert;
+    padding: revert;
+    margin: revert;
+}
+.assessment td #editButton {
+    padding: revert;
+    margin: revert;
+    text-align: left;
 }
 .footer {
     text-align: center;

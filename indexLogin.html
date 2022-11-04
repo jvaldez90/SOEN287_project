@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Concordia University SOEN 287</title>
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./indexLogin.css">
         <meta charset="UTF-8">
     </head>
     <body>
@@ -13,9 +13,8 @@
         </h2>
         <hr>
         <div id="addButtons">
-            <button>Add New Student</button>
-            <button>Add New Grade</button>
-            <button onclick="location.href='./login.html';" value="login">Login</button>
+            <button onclick="location.href='./newRecord.html';" value="newRecord">Add New Student</button>
+            <button onclick="location.href='./logout.html';" value="logout">Sign Out</button>
         </div>
         <br/>
         <table class="assessment" id="table">
@@ -29,6 +28,7 @@
                     <th>Final Exam</th>
                     <th>Average</th>
                     <th>Grade</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +42,7 @@
                     <td id="FinalExam_Barry">72</td><!--Final-->
                     <td id="avgBarry"></td><!--Average-->
                     <td></td> <!--Final Grade-->
+                    <td><button id="editButton">Edit</button></td>
                 </tr>
                 <tr>
                     <td>Oliver</td>
@@ -52,6 +53,7 @@
                     <td id="FinalExam_Oliver">75</td><!--Final-->
                     <td id="avgOliver"></td><!--Average-->
                     <td></td>
+                    <td><button id="editButton">Edit</button></td>
                 </tr>
                 <tr>
                     <td>Kara</td>
@@ -62,6 +64,7 @@
                     <td id ="FinalExam_Kara">78</td><!--Final-->
                     <td id ="avgKara"></td><!--Average-->
                     <td></td>
+                    <td><button id="editButton">Edit</button></td>
                 </tr>
                 <tr>
                     <td><pre></pre></td>
@@ -71,6 +74,7 @@
                     <td></td><!--Midterm-->
                     <td></td><!--Final-->
                     <td></td><!--Average-->
+                    <td></td>
                     <td></td>
                 </tr>
             </tbody>
@@ -84,6 +88,7 @@
                     <th>Avg Final</th>
                     <th>Median</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td><pre></pre></td>
@@ -92,6 +97,7 @@
                     <td id ="AvgA3"></td>
                     <td id ="AvgMidterm"></td>
                     <td id ="avgFinal"></td>
+                    <td></td>
                     <td></td>
                     <td></td>
                 </tr>
