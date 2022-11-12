@@ -11,7 +11,7 @@ function averageBarry() {
     var final = a1 + a2 + a3+ midTerm + final_Test;; 
     var total = (final/ 5).toFixed(2);
     document.getElementById("avgBarry").innerHTML = total + "%";
-    return [a1, a2, a3, midTerm, final_Test];
+    return [a1, a2, a3, midTerm, final_Test,total];
 }
 function averageOliver() {
     var a1 =  parseInt(document.getElementById("A1Oliver").innerHTML);
@@ -25,7 +25,7 @@ function averageOliver() {
     var final = a1 + a2 + a3+ midTerm + final_Test;; 
     var total = (final/ 5).toFixed(2);
     document.getElementById("avgOliver").innerHTML = total + "%";
-    return [a1, a2, a3, midTerm, final_Test];
+    return [a1, a2, a3, midTerm, final_Test,total];
 }
 function averageKara() {
     var a1 =  parseInt(document.getElementById("A1Kara").innerHTML);
@@ -39,7 +39,7 @@ function averageKara() {
     var final = a1 + a2 + a3+ midTerm + final_Test;; 
     var total = (final/ 5).toFixed(2);
     document.getElementById("avgKara").innerHTML = total + "%";
-    return [a1, a2, a3, midTerm, final_Test];
+    return [a1, a2, a3, midTerm, final_Test, total];
 }
 // ----------------------End of functions for student averages----------------------
 
@@ -53,6 +53,7 @@ Avg_A2Barry = all_avgs_barry[1];
 Avg_A3Barry = all_avgs_barry[2];
 Avg_MidTerm_Barry = all_avgs_barry[3];
 Avg_FinalExam_Barry = all_avgs_barry[4];
+total_avg_barry = all_avgs_barry[5]
 
 
 Avg_A1Oliver = all_avgs_oliver[0];
@@ -60,15 +61,20 @@ Avg_A2Oliver = all_avgs_oliver[1];
 Avg_A3Oliver = all_avgs_oliver[2];
 Avg_MidTerm_Oliver = all_avgs_oliver[3];
 Avg_FinalExam_Oliver = all_avgs_oliver[4];
+total_avg_oliver = all_avgs_oliver[5];
 
 Avg_A1Kara = all_avgs_kara[0];
 Avg_A2Kara = all_avgs_kara[1];
 Avg_A3Kara = all_avgs_kara[2];
 Avg_MidTerm_Kara = all_avgs_kara[3];
 Avg_FinalExam_Kara = all_avgs_kara[4];
+total_avg_kara = all_avgs_kara[5];
 console.log(all_avgs_barry); //testing the console
 console.log(all_avgs_oliver);
 console.log(all_avgs_kara);
+
+
+total_avg_students = [total_avg_barry, total_avg_oliver, total_avg_kara];
 // ----------------------End of running functions and assigning results to variables----------------------
 
 // ----------------------Function to calculate class averages for different tests/assignments----------------------
@@ -88,3 +94,31 @@ function classAssignment_averages() {
 
 //run function
 classAssignment_averages();
+
+// ----------------------End of function to calculate class averages for different tests/assignments----------------------
+
+let grades = []
+
+function getLetterGrades(grades) {
+    let letterGrades = grades.map(function(grade){
+    if (grade < 50) {
+        return "F";
+    } else if (grade < 60) {
+        return "D";
+    } else if (grade < 70) {
+        return "C";
+    } else if (grade < 90) {
+        return "B";
+        } 
+    else {
+        return "A";
+        }
+    }); 
+
+    console.log(letterGrades);
+document.getElementById("letterGradeB").innerHTML = letterGrades[0];
+document.getElementById("letterGradeO").innerHTML = letterGrades[1];
+document.getElementById("letterGradeK").innerHTML = letterGrades[2];
+}
+
+getLetterGrades(total_avg_students);
