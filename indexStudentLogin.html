@@ -6,100 +6,103 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <h2 id="courseTitle"><br/>
-            Concordia University <br/>
-            SOEN 287 Grades Management System<br/>
-            Fall 2022 <br/>
-        </h2>
-        <hr>
-        <div id="addButtons">
-            <button onclick="location.href='./indexStats.html';" value="indexStats">View Statistics</button>
-            <button onclick="location.href='./logout.html';" value="logout">Sign Out</button>
-        </div>
-        <br/>
-        <table class="assessment" id="table">
-            <thead>
-                <tr>
-                    <th>Student Name</th>
-                    <th>Assignment 1</th>
-                    <th>Assignment 2</th>
-                    <th>Assignment 3</th>
-                    <th>Midterm Test</th>
-                    <th>Final Exam</th>
-                    <th>Average</th>
-                    <th>Grade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Barry</td>
-                    
-                    <td id="A1Barry">87</td><!--A1-->
-                    <td id="A2Barry">25</td><!--A2-->
-                    <td id="A3Barry">80</td><!--A3-->
-                    <td id="MidTerm_Barry">75</td><!--Midterm-->
-                    <td id="FinalExam_Barry">72</td><!--Final-->
-                    <td id="avgBarry"></td><!--Average-->
-                    <td id="letterGradeB"></td> <!--Final Grade-->
-                </tr>
-                <tr>
-                    <td>Oliver</td>
-                    <td id ="A1Oliver">88</td><!--A1-->
-                    <td id ="A2Oliver">75</td><!--A2-->
-                    <td id ="A3Oliver">79</td><!--A3-->
-                    <td id="MidTerm_Oliver">75</td><!--Midterm-->
-                    <td id="FinalExam_Oliver">75</td><!--Final-->
-                    <td id="avgOliver"></td><!--Average-->
-                    <td id ="letterGradeO"></td>
-                </tr>
-                <tr>
-                    <td>Kara</td>
-                    <td id ="A1Kara">91</td><!--A1-->
-                    <td id ="A2Kara">90</td><!--A2-->
-                    <td id ="A3Kara">95</td><!--A3-->
-                    <td id ="MidTerm_Kara">90</td><!--Midterm-->
-                    <td id ="FinalExam_Kara">85</td><!--Final-->
-                    <td id ="avgKara"></td><!--Average-->
-                    <td id ="letterGradeK"></td>
-                </tr>
-                <tr>
-                    <td><pre></pre></td>
-                    <td></td><!--A1-->
-                    <td></td><!--A2-->
-                    <td></td><!--A3-->
-                    <td></td><!--Midterm-->
-                    <td></td><!--Final-->
-                    <td></td><!--Average-->
-                    <td></td>
-                </tr>
-            </tbody>
-            <tfoot id="tableFoot">
-                <tr>
-                    <th></th>
-                    <th>Avg A1</th>
-                    <th>Avg A2</th>
-                    <th>Avg A3</th>
-                    <th>Avg Midtrem</th>
-                    <th>Avg Final</th>
-                    <th>Median</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td><pre></pre></td>
-                    <td id ="AvgA1"></td>
-                    <td id ="AvgA2"></td>
-                    <td id ="AvgA3"></td>
-                    <td id ="AvgMidterm"></td>
-                    <td id ="avgFinal"></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tfoot>
-            <script src="script.js"></script>
-        </table>
+        <form name="indexStudentLogin" id="indexStudentLogin" method="post" action="./indexStudentLogin.php">
+
+            <h2 id="courseTitle"><br/>
+                Concordia University <br/>
+                SOEN 287 Grades Management System<br/>
+                Fall 2022 <br/>
+            </h2>
+            <hr>
+            <div id="addButtons">
+                <button onclick="location.href='./indexStats.html';" value="indexStats">View Statistics</button>
+                <button onclick="location.href='./logout.html';" value="logout">Sign Out</button>
+            </div>
+            <br/>
+            <table class="assessment" id="table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Assignment 1</th>
+                        <th>Assignment 2</th>
+                        <th>Assignment 3</th>
+                        <th>Midterm Test</th>
+                        <th>Final Exam</th>
+                        <th>Average</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Barry</td>
+                        
+                        <td id="A1Barry">87</td><!--A1-->
+                        <td id="A2Barry">25</td><!--A2-->
+                        <td id="A3Barry">80</td><!--A3-->
+                        <td id="MidTerm_Barry">75</td><!--Midterm-->
+                        <td id="FinalExam_Barry">72</td><!--Final-->
+                        <td id="avgBarry"></td><!--Average-->
+                        <td id="letterGradeB"></td> <!--Final Grade-->
+                    </tr>
+                    <tr>
+                        <td>Oliver</td>
+                        <td id ="A1Oliver">88</td><!--A1-->
+                        <td id ="A2Oliver">75</td><!--A2-->
+                        <td id ="A3Oliver">79</td><!--A3-->
+                        <td id="MidTerm_Oliver">75</td><!--Midterm-->
+                        <td id="FinalExam_Oliver">75</td><!--Final-->
+                        <td id="avgOliver"></td><!--Average-->
+                        <td id ="letterGradeO"></td>
+                    </tr>
+                    <tr>
+                        <td>Kara</td>
+                        <td id ="A1Kara">91</td><!--A1-->
+                        <td id ="A2Kara">90</td><!--A2-->
+                        <td id ="A3Kara">95</td><!--A3-->
+                        <td id ="MidTerm_Kara">90</td><!--Midterm-->
+                        <td id ="FinalExam_Kara">85</td><!--Final-->
+                        <td id ="avgKara"></td><!--Average-->
+                        <td id ="letterGradeK"></td>
+                    </tr>
+                    <tr>
+                        <td><pre></pre></td>
+                        <td></td><!--A1-->
+                        <td></td><!--A2-->
+                        <td></td><!--A3-->
+                        <td></td><!--Midterm-->
+                        <td></td><!--Final-->
+                        <td></td><!--Average-->
+                        <td></td>
+                    </tr>
+                </tbody>
+                <tfoot id="tableFoot">
+                    <tr>
+                        <th></th>
+                        <th>Avg A1</th>
+                        <th>Avg A2</th>
+                        <th>Avg A3</th>
+                        <th>Avg Midtrem</th>
+                        <th>Avg Final</th>
+                        <th>Median</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td><pre></pre></td>
+                        <td id ="AvgA1"></td>
+                        <td id ="AvgA2"></td>
+                        <td id ="AvgA3"></td>
+                        <td id ="AvgMidterm"></td>
+                        <td id ="avgFinal"></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+                <script src="script.js"></script>
+            </table>
+        </form>
     </body>
-    <footer class="footer">
-        <hr>
-        <p><strong>SOEN 287: Web Programming - Fall 2022</strong></p>
+        <footer class="footer">
+            <hr>
+            <p><strong>SOEN 287: Web Programming - Fall 2022</strong></p>
     </footer>
 </html>
