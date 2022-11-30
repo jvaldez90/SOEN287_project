@@ -11,7 +11,7 @@ function check_login($conn){
         }
     }
     // redirect to login
-    header("Location: login.php");
+    header("Location: ./login.php");
     die;
 }
 function random_num($length){
@@ -25,5 +25,4 @@ function random_num($length){
     }
     return $text;
 }
-
 ?>

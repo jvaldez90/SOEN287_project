@@ -1,16 +1,28 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "SOEN287";
+session_start();
+include("./connection.php");
+include("./functions.php");
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+    $name = $_POST['name'];
+    $a1 = $_POST['a1'];
+    $a2 = $_POST['a2'];
+    $a3 = $_POST['a3'];
+    $midterm = $_POST['midterm'];
+    $final = $_POST['final'];
 
-if(!$conn){
-    die("Connection failed: " . mysqli_connect_error());
+    if(!empty($name)){
+        // Save to database table 'grade_records'
+        $query = "INSERT INTO grade_records (name, a1, a2, a3, midterm, final) VALUES('$name', '$a1', '$a2', '$a3', '$midterm', '$final')";
+
+        mysqli_query($conn, $query);
+        echo "New Record has been saved";
+        header("Location: indexLogin.php");
+        die;
+
+    }else {
+        echo "Please enter at least the name of new student!";
+    }
 }
-echo "Connected successfully";
-
-mysqli_close($conn);
 
 ?>

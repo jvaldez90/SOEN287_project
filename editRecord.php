@@ -1,34 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Student Record</title>
-    </head>
-    <body>
-        <?php
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "SOEN287";
+<?php
+    session_start();
+    include("./connetion.php");
+    include("./functions.php");
 
-            $conn = mysqli_connect($servername, $username, $password, $dbname);
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $name = $_POST['name'];
+        $a1 = $_POST['a1'];
+        $a2 = $_POST['a2'];
+        $a3 = $_POST['a3'];
+        $midterm = $_POST['midterm'];
+        $final = $_POST['final'];
+    
+        if(!empty($name)){
+            // Save to database table 'grade_records'
+            $query = "SELECT * FROM grade_records WHERE name='$name LIMIE 1";
 
-            if(!$conn){
-                die("Connection failed: " . mysqli_connect_error());
-            }
-            echo "Connected successfully";
+            $result = mysqli_query($conn, $query);
 
-            mysqli_close($conn);
+            // if($result){
+            //     if($result && mysqli_num_rows($result) > 0){
+            //         $a1 = $_POST['a1'];
+            //         $a2 = $_POST['a2'];
+            //         $a3 = $_POST['a3'];
+            //         $midterm = $_POST['midterm'];
+            //         $final = $_POST['final'];
+            //     }
+            // }
+    
+        }else {
+            echo "Please enter at least the name of new student!";
+        }
+    }
 
-        ?>
-        <div id="header">Edit Student Record</div><br/>
-            <?php echo $_POST["name"];?><br/>
-            <?php echo $_POST["a1"];?><br/>
-            <?php echo $_POST["a2"];?><br/>
-            <?php echo $_POST["a3"];?><br/>
-            <?php echo $_POST["midterm"];?><br/>
-            <?php echo $_POST["final"];?>
-    </body>
-</html>
+?>
