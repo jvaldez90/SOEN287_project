@@ -1,16 +1,13 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "SOEN287";
+    session_start();
+    $_SESSION;
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+    include("./connection.php");
+    include("./functions.php");
+    include("./indexStats.php");
+    include("./logout.php");
 
-if(!$conn){
-    die("Connection failed: " . mysqli_connect_error());
-}
-echo "Connected successfully";
+    $user_data = check_login($conn);
 
-mysqli_close($conn);
 
 ?>

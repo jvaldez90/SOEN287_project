@@ -8,10 +8,10 @@
     include("./indexStats.php");
     include("./indexStudentLogin.php");
     include("./newRecord.php");
+    include("./logout.php");
+    include("./indexLogin.html");
 
     $user_data = check_login($conn);
-
-echo "Hello from indexLogin.php";
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ echo "Hello from indexLogin.php";
     </h2>
     <hr>
     <div>
-        <?= $user_data['names'];?><br>
+        <p>You are logged in as: <?= $user_data['names'];?></p><br>
         <a href="./indexStudentLogin.html"><p>Student Page View</p></a></div>
     <div id="addButtons">
         <button onclick="location.href='./newRecord.php';" value="newRecord">Add New Student</button>

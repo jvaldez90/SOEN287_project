@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Grades System Sign In</title>
-        <link rel="stylesheet" href="./login.css">
-
-    </head>
-    <body>
-        <main class="container">
-            <div id="loginArea">
-                <div id="header">
-                    Concordia University<br/>
-                    Grades Management System<br/><br/>
-                </div>
-                <form name="loginForm" id="loginForm" method="post" action="./login.php">
-                    <div id="loginMessage">Sign In</div>
-                    <div id="userNameArea">
-                        <input id="email" name="email" type="email" placeholder="Email">
-                    </div>
-                    <div id="passwordArea">
-                        <input id="password" name="password" type="password" placeholder="Password">
-                    </div>
-                    <div id="submissionArea">
-                        <button id="submitButton" role="button">SIGN IN</button> 
-                    </div>
-                    <div id="authOption">
-                        <a href="" id="resetPassword">
-                            <p>Forgot Password?</p>
-                        </a>
-                        <p>
-                            Sign up as a 
-                            <a href="" id="newAccount">new faculty member</a>
-                        </p>
-                    </div>
-                </form>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade System Login</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <main class="container">
+        <div id="loginArea">
+            <div id="header">
+                Concordia University<br/>
+                Grades Management System<br/><br/>
             </div>
-        </main>
-    </body>
+            <form name="loginForm" id="loginForm" method="POST">
+                <div id="loginMessage">Sign In</div>
+                <div id="userNameArea">
+                    <input id="email" name="email" type="email" placeholder="Email">
+                </div>
+                <div id="passwordArea">
+                    <input id="password" name="password" type="password" placeholder="Password">
+                </div>
+                <div id="submissionArea">
+                    <input id="submitButton" type="submit" value="LOGIN"><br>
+                </div>
+                <div id="authOption">
+                    <a href="" id="resetPassword">
+                        <p>Forgot Password?</p>
+                    </a>
+                    <p>
+                        Click to create 
+                        <a href="./signup.php" id="newAccount">new account</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
 </html>
