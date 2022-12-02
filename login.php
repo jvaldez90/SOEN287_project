@@ -25,13 +25,13 @@
                         // If user logging in is a teacher
                         if($user_data['is_faculty'] == 1){
                             // Redirect to faculty login page
-                            header("Location: indexLogin.html");
+                            header("Location: indexLogin.php");
                             die;
                         
                         // If user loggin in is a student
                         }else if ($user_data['is_student'] == 1){
                             // Redirect to student login page 
-                            header("Location: indexStudentLogin.html");
+                            header("Location: indexStudentLogin.php");
                             die;
                         }
                     }

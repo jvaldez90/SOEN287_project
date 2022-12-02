@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 02, 2022 at 02:09 PM
+-- Generation Time: Dec 02, 2022 at 05:16 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -35,6 +35,7 @@ CREATE TABLE `grade_records` (
   `Assignment 3` float DEFAULT NULL,
   `Midterm` float DEFAULT NULL,
   `Final Exam` float DEFAULT NULL,
+  `Average` int(11) DEFAULT NULL,
   `Final Grade` varchar(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,17 +43,17 @@ CREATE TABLE `grade_records` (
 -- Dumping data for table `grade_records`
 --
 
-INSERT INTO `grade_records` (`id`, `Name`, `Assignment 1`, `Assignment 2`, `Assignment 3`, `Midterm`, `Final Exam`, `Final Grade`) VALUES
-(1, 'Barry Allen', 75, 80, 63, 67, 73, NULL),
-(2, 'Oliver Queen', 65, 74, 82, 63, 87, NULL),
-(3, 'Kara Danvers', 62, 73, 88, 92, 78, NULL),
-(4, 'Jerfferson Pierce', 65, 88, 95, 73, 61, NULL),
-(5, 'Bruce Wayne', 77, 80, 96, 95, 66, NULL),
-(6, 'Lena Luther', 78, 82, 72, 64, 75, NULL),
-(7, 'Felicity Smoak', 98, 88, 78, 72, 95, NULL),
-(8, 'John Diggle', 67, 73, 65, 59, 60, NULL),
-(9, 'Caitlin Snow', 67, 76, 88, 55, 87, NULL),
-(10, 'Cisco Ramon', 77, 72, 75, 79, 71, NULL);
+INSERT INTO `grade_records` (`id`, `Name`, `Assignment 1`, `Assignment 2`, `Assignment 3`, `Midterm`, `Final Exam`, `Average`, `Final Grade`) VALUES
+(1, 'Barry Allen', 75, 80, 63, 67, 73, NULL, NULL),
+(2, 'Oliver Queen', 65, 74, 82, 63, 87, NULL, NULL),
+(3, 'Kara Danvers', 62, 73, 88, 92, 78, NULL, NULL),
+(4, 'Jerfferson Pierce', 65, 88, 95, 73, 61, NULL, NULL),
+(5, 'Bruce Wayne', 77, 80, 96, 95, 66, NULL, NULL),
+(6, 'Lena Luther', 78, 82, 72, 64, 75, NULL, NULL),
+(7, 'Felicity Smoak', 98, 88, 78, 72, 95, NULL, NULL),
+(8, 'John Diggle', 67, 73, 65, 59, 60, NULL, NULL),
+(9, 'Caitlin Snow', 67, 76, 88, 55, 87, NULL, NULL),
+(10, 'Cisco Ramon', 77, 72, 75, 79, 71, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -89,7 +90,7 @@ INSERT INTO `users` (`id`, `user_id`, `name`, `email`, `password`, `is_faculty`,
 (11, 12340008, 'John Diggle', 'johndiggle@gradesite.com', 'i am spartan', 0, 1, '2022-11-30 16:21:53'),
 (12, 12340009, 'Caitlin Snow', 'caitlinsnow@starlabs.com', 'i am killer frost', 0, 1, '2022-11-30 16:21:53'),
 (13, 12340010, 'Cisco Ramon', 'ciscoramon@starlabs.com', 'i am mecavibe', 0, 1, '2022-11-30 16:21:53'),
-(19, 79018647, 'Clark Kent', 'ckent@dailyplanet.com', 'superman', 0, 1, '2022-12-02 13:07:36');
+(14, 79018647, 'Clark Kent', 'ckent@dailyplanet.com', 'superman', 0, 1, '2022-12-02 14:48:22');
 
 --
 -- Indexes for dumped tables
@@ -128,7 +129,7 @@ ALTER TABLE `grade_records`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
