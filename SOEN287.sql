@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2022 at 04:08 PM
+-- Generation Time: Dec 02, 2022 at 02:09 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.1.6
 
@@ -62,32 +62,34 @@ INSERT INTO `grade_records` (`id`, `Name`, `Assignment 1`, `Assignment 2`, `Assi
 
 CREATE TABLE `users` (
   `id` int(5) NOT NULL,
-  `user_id` int(8) NOT NULL,
-  `name` varchar(40) DEFAULT NULL,
-  `email` varchar(40) DEFAULT NULL,
-  `password` varchar(40) DEFAULT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL,
   `is_faculty` tinyint(1) NOT NULL,
-  `is_student` tinyint(1) NOT NULL
+  `is_student` tinyint(1) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_id`, `name`, `email`, `password`, `is_faculty`, `is_student`) VALUES
-(1, 28712345, 'Ra\'s Al Ghul', 'alghul@gmail.com', 'lazarus pit', 1, 0),
-(2, 28712346, 'Joe West', 'joewest@centralcitypd.com', 'ccpd detective', 1, 0),
-(3, 28712347, 'John Jones', 'johnjones@mars.com', 'martian manhunter', 1, 0),
-(4, 12340001, 'Barry Allen', 'barryallen@starlabs.com', 'i am the flash', 0, 1),
-(5, 12340002, 'Oliver Queen', 'oliverqueen@gradesite.com', 'i am the green arrow', 0, 1),
-(6, 12340003, 'Kara Danvers', 'karazor-el@catco.com', 'i am supergirl', 0, 1),
-(7, 12340004, 'Jefferson Pierce', 'blacklightning@gradesite.com', 'the future is here', 0, 1),
-(8, 12340005, 'Bruce Wayne', 'bwayne@wayneenterprises.com', 'i am batman', 0, 1),
-(9, 12340006, 'Lena Luther', 'lenaluther@lcorp.com', 'i am a luther', 0, 1),
-(10, 12340007, 'Felicity Smoak', 'fsmoak@smaokindustries.com', 'i am overwatch', 0, 1),
-(11, 12340008, 'John Diggle', 'johndiggle@gradesite.com', 'i am spartan', 0, 1),
-(12, 12340009, 'Caitlin Snow', 'caitlinsnow@starlabs.com', 'i am killer frost', 0, 1),
-(13, 12340010, 'Cisco Ramon', 'ciscoramon@starlabs.com', 'i am mecavibe', 0, 1);
+INSERT INTO `users` (`id`, `user_id`, `name`, `email`, `password`, `is_faculty`, `is_student`, `date`) VALUES
+(1, 28712345, 'Ra\'s Al Ghul', 'alghul@gmail.com', 'lazarus pit', 1, 0, '2022-11-30 16:21:53'),
+(2, 28712346, 'Joe West', 'joewest@centralcitypd.com', 'ccpd detective', 1, 0, '2022-11-30 16:21:53'),
+(3, 28712347, 'John Jones', 'johnjones@mars.com', 'martian manhunter', 1, 0, '2022-11-30 16:21:53'),
+(4, 12340001, 'Barry Allen', 'barryallen@starlabs.com', 'i am the flash', 0, 1, '2022-11-30 16:21:53'),
+(5, 12340002, 'Oliver Queen', 'oliverqueen@gradesite.com', 'i am the green arrow', 0, 1, '2022-11-30 16:21:53'),
+(6, 12340003, 'Kara Danvers', 'karazor-el@catco.com', 'i am supergirl', 0, 1, '2022-11-30 16:21:53'),
+(7, 12340004, 'Jefferson Pierce', 'blacklightning@gradesite.com', 'the future is here', 0, 1, '2022-11-30 16:21:53'),
+(8, 12340005, 'Bruce Wayne', 'bwayne@wayneenterprises.com', 'i am batman', 0, 1, '2022-11-30 16:21:53'),
+(9, 12340006, 'Lena Luther', 'lenaluther@lcorp.com', 'i am a luther', 0, 1, '2022-11-30 16:21:53'),
+(10, 12340007, 'Felicity Smoak', 'fsmoak@smaokindustries.com', 'i am overwatch', 0, 1, '2022-11-30 16:21:53'),
+(11, 12340008, 'John Diggle', 'johndiggle@gradesite.com', 'i am spartan', 0, 1, '2022-11-30 16:21:53'),
+(12, 12340009, 'Caitlin Snow', 'caitlinsnow@starlabs.com', 'i am killer frost', 0, 1, '2022-11-30 16:21:53'),
+(13, 12340010, 'Cisco Ramon', 'ciscoramon@starlabs.com', 'i am mecavibe', 0, 1, '2022-11-30 16:21:53'),
+(19, 79018647, 'Clark Kent', 'ckent@dailyplanet.com', 'superman', 0, 1, '2022-12-02 13:07:36');
 
 --
 -- Indexes for dumped tables
@@ -103,7 +105,14 @@ ALTER TABLE `grade_records`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `name` (`name`),
+  ADD KEY `email` (`email`),
+  ADD KEY `date` (`date`),
+  ADD KEY `is_faculty` (`is_faculty`),
+  ADD KEY `is_student` (`is_student`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -119,7 +128,7 @@ ALTER TABLE `grade_records`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

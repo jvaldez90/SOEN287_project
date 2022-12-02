@@ -17,7 +17,7 @@ function check_login($conn){
 function random_num($length){
     $text = "";
 
-    for($i = 0; $i < $length+1; $i++){
+    for($i = 0; $i < $length; $i++){
         $text .= rand(0, 9);
     }
     return $text;

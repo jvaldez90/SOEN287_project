@@ -75,8 +75,8 @@
                         <p>Forgot Password?</p>
                     </a>
                     <p>
-                        Create 
-                        <a href="./signup.php" id="newAccount">new account</a>
+                        Click to Create 
+                        <a href="./signup.php" id="newAccount">New Account</a>
                     </p>
                 </div>
             </form>
