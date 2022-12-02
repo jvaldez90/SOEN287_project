@@ -2,7 +2,6 @@
     session_start();
     include("./connection.php");
     include("./functions.php");
-    include("./login.php");
 
     
     if($_SERVER['REQUEST_METHOD']== "POST"){
@@ -16,10 +15,17 @@
 
         if(!empty($username) && !empty($email) && !empty($password) && !is_numeric($email)){
             //Save to database
-            $user_id = random_num(20);
+            if(empty($is_faculty)){
+                $is_faculty = 0;
+            }
+            if(empty($is_student)){
+                $is_student = 0;
+            }
+            $user_id = random_num(8); // Sets a up a random 8-digit user id
             $query = "INSERT INTO users (user_id, name, email, password, is_faculty, is_student) VALUES ('$user_id', '$username', '$email', '$password', '$is_faculty', '$is_student')";
 
             mysqli_query($conn, $query);
+            echo "New Account Created Successful!";
             header("Location: login.php");
             die;
         }else{
