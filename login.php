@@ -28,7 +28,7 @@
                             header("Location: indexLogin.php");
                             die;
                         
-                        // If user loggin in is a student
+                        // If user logging in is a student
                         }else if ($user_data['is_student'] == 1){
                             // Redirect to student login page 
                             header("Location: indexStudentLogin.php");

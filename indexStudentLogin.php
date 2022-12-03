@@ -48,11 +48,12 @@
                 <tbody>
                     <!-- Generate data of list of students from grade_records table -->
                     <?php
-                        $num_students = "SELECT COUNT(*) from grade_records";
                         $query = "SELECT * FROM grade_records";
                         $result = mysqli_query($conn, $query);
                         if($result && mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_assoc($result)){
+                                // Calculate Average for each row in table
+                                $average = ($row['Assignment 1'] + $row['Assignment 2'] + $row['Assignment 3']+ $row['Midterm']+$row['Final Exam'])/5;
                             echo "<tr>" .
                                 "<td>". $row['Name']."</td>".
                                 "<td>". $row['Assignment 1']."</td>".
@@ -60,7 +61,7 @@
                                 "<td>". $row['Assignment 3']."</td>".
                                 "<td>". $row['Midterm']."</td>".
                                 "<td>". $row['Final Exam']."</td>".
-                                "<td>". $row['Average']."</td>".
+                                "<td>". $average."</td>".
                                 "<td>". $row['Final Garde']."</td>".
                                 "</tr>";
                             }
@@ -87,6 +88,43 @@
                         <th>Avg Final</th>
                         <th>Median</th>
                         <th></th>
+                    </tr>
+                    <tr>
+                        <!-- Generate the Average for each colomun in table -->
+                        <?php
+                        $avg_a1 = "SELECT AVG(`Assignment 1`) FROM grade_records";
+                        $avg_a2 = "SELECT AVG(`Assignment 2`) FROM grade_records";
+                        $avg_a3 = "SELECT AVG(`Assignment 3`) FROM grade_records";
+                        $avg_midterm = "SELECT AVG(Midterm) FROM grade_records";
+                        $avg_final = "SELECT AVG(`Final Exam`) FROM grade_records";
+
+                        $query_a1 = mysqli_query($conn, $avg_a1);
+                        $query_a2 = mysqli_query($conn, $avg_a2);
+                        $query_a3 = mysqli_query($conn, $avg_a3);
+                        $query_midterm = mysqli_query($conn, $avg_midterm);
+                        $query_final = mysqli_query($conn, $avg_final);
+
+                        echo "<td><pre></pre></td>";
+                        if($a1 = mysqli_fetch_assoc($query_a1)){
+                            echo "<td>".$a1['AVG(`Assignment 1`)']."</td>";
+                        }
+                        if($a2 = mysqli_fetch_assoc($query_a2)){
+                            echo "<td>".$a2['AVG(`Assignment 2`)']."</td>";
+                        }
+                        if($a3 = mysqli_fetch_assoc($query_a3)){
+                            echo "<td>".$a3['AVG(`Assignment 3`)']."</td>";
+                        }
+                        if($midterm = mysqli_fetch_assoc($query_midterm)){
+                            echo "<td>".$midterm['AVG(Midterm)']."</td>";
+                        }
+                        if($final = mysqli_fetch_assoc($query_final)){
+                            echo "<td>".$final['AVG(`Final Exam`)']."</td>";
+                        }
+
+                        echo "<td></td>";
+                        echo "<td></td>";
+
+                        ?>
                     </tr>
                     <tr>
                         <td><pre></pre></td>
