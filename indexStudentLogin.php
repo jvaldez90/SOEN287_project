@@ -53,16 +53,16 @@
                         if($result && mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_assoc($result)){
                                 // Calculate Average for each row in table
-                                $average = ($row['Assignment 1'] + $row['Assignment 2'] + $row['Assignment 3']+ $row['Midterm']+$row['Final Exam'])/5;
+                                $average = ($row['assignment_1'] + $row['assignment_2'] + $row['assignment_3']+ $row['midterm']+$row['final_exam'])/5;
                             echo "<tr>" .
-                                "<td>". $row['Name']."</td>".
-                                "<td>". $row['Assignment 1']."</td>".
-                                "<td>". $row['Assignment 2']."</td>".
-                                "<td>". $row['Assignment 3']."</td>".
-                                "<td>". $row['Midterm']."</td>".
-                                "<td>". $row['Final Exam']."</td>".
-                                "<td>". $average."</td>".
-                                "<td>". $row['Final Garde']."</td>".
+                                "<td>". $row['name']."</td>".
+                                "<td>". $row['assignment_1']."</td>".
+                                "<td>". $row['assignment_2']."</td>".
+                                "<td>". $row['assignment_3']."</td>".
+                                "<td>". $row['midterm']."</td>".
+                                "<td>". $row['final_exam']."</td>".
+                                "<td>". number_format($average, 2)."%</td>".
+                                "<td>". $row['final_grade']."</td>".
                                 "</tr>";
                             }
                         }
@@ -92,11 +92,12 @@
                     <tr>
                         <!-- Generate the Average for each colomun in table -->
                         <?php
-                        $avg_a1 = "SELECT AVG(`Assignment 1`) FROM grade_records";
-                        $avg_a2 = "SELECT AVG(`Assignment 2`) FROM grade_records";
-                        $avg_a3 = "SELECT AVG(`Assignment 3`) FROM grade_records";
-                        $avg_midterm = "SELECT AVG(Midterm) FROM grade_records";
-                        $avg_final = "SELECT AVG(`Final Exam`) FROM grade_records";
+                        $avg_a1 = "SELECT AVG(assignment_1) FROM grade_records";
+                        $avg_a2 = "SELECT AVG(assignment_2) FROM grade_records";
+                        $avg_a3 = "SELECT AVG(assignment_3) FROM grade_records";
+                        $avg_midterm = "SELECT AVG(midterm) FROM grade_records";
+                        $avg_final = "SELECT AVG(final_exam) FROM grade_records";
+
 
                         $query_a1 = mysqli_query($conn, $avg_a1);
                         $query_a2 = mysqli_query($conn, $avg_a2);
@@ -106,19 +107,19 @@
 
                         echo "<td><pre></pre></td>";
                         if($a1 = mysqli_fetch_assoc($query_a1)){
-                            echo "<td>".$a1['AVG(`Assignment 1`)']."</td>";
+                            echo "<td>".number_format($a1['AVG(assignment_1)'], 2)."%</td>";
                         }
                         if($a2 = mysqli_fetch_assoc($query_a2)){
-                            echo "<td>".$a2['AVG(`Assignment 2`)']."</td>";
+                            echo "<td>".number_format($a2['AVG(assignment_2)'], 2)."%</td>";
                         }
                         if($a3 = mysqli_fetch_assoc($query_a3)){
-                            echo "<td>".$a3['AVG(`Assignment 3`)']."</td>";
+                            echo "<td>".number_format($a3['AVG(assignment_3)'], 2)."%</td>";
                         }
                         if($midterm = mysqli_fetch_assoc($query_midterm)){
-                            echo "<td>".$midterm['AVG(Midterm)']."</td>";
+                            echo "<td>".number_format($midterm['AVG(midterm)'], 2)."%</td>";
                         }
                         if($final = mysqli_fetch_assoc($query_final)){
-                            echo "<td>".$final['AVG(`Final Exam`)']."</td>";
+                            echo "<td>".number_format($final['AVG(final_exam)'], 2)."%</td>";
                         }
 
                         echo "<td></td>";
