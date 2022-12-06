@@ -7,7 +7,7 @@
 .container {
     display: flex;
 }
-#newRecordForm {
+#editRecordForm {
     padding-top: 10em;
 }
 #header {

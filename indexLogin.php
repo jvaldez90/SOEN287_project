@@ -95,11 +95,21 @@
                     <?php                        
                         $query = "SELECT * FROM grade_records";
                         $result = mysqli_query($conn, $query);
+
                         if($result && mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_assoc($result)){
+                                // Store each row data into a url query parameters
+                                $name = $row['name'];
+                                $a1 = $row['assignment_1'];
+                                $a2 = $row['assignment_2'];
+                                $a3 = $row['assignment_3'];
+                                $midterm = $row['midterm'];
+                                $final_exam = $row['final_exam'];
+                                $url = "./editRecord.php?name=$name&assignment_1=$a1&assignment_2=$a2&assignment_3=$a3&midterm=$midterm&final_exam=$final_exam";
                                 // Calculate Average for each row in table
-                                $average = ($row['assignment_1'] + $row['assignment_2'] + $row['assignment_3']+ $row['midterm']+$row['final_exam'])/5;
-                            echo "<tr>" .
+                                $average = ($row['assignment_1'] + $row['assignment_2'] + $row['assignment_3']+ $row['midterm']+$row['final_exam'])/5;                            
+                                // Display grade_records table to user
+                                echo "<tr>" .
                                 "<td>". $row['name']."</td>".
                                 "<td>". $row['assignment_1']."</td>".
                                 "<td>". $row['assignment_2']."</td>".
@@ -109,8 +119,8 @@
                                 "<td>". number_format($average, 2)."%</td>".
                                 "<td>". $row['final_grade']."</td>".
                                 "<td>
-                                    <button id=\"editButton\" onclick=\"location.href='./editRecord.php';\" value=\"editRecord\">Edit</button>
-                                    <button id=\"deleteButton\" value=\"delete\">Delete</button></td>".
+                                <button id=\"editButton\" onclick=\"location.href='$url';\" value=\"editRecord\">Edit</button>
+                                <button id=\"deleteButton\" value=\"delete\">Delete</button></td>".
                                 "</tr>";
                             }
                         }

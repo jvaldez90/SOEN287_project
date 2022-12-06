@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(!empty($name) && !is_numeric($name)){
         $average = NULL;
         $grade = NULL;
-        // If all assignment scores are not set by user, then set everything to NULL
+        // If all assignment scores are not set by user, then set everything to 0
         if(empty($a1) && empty($a2) && empty($a3) && empty($midterm) && empty($final)){
             $a1 = 0;
             $a2 = 0;
