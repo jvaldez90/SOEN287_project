@@ -18,7 +18,7 @@
 input {
     background-color: white;
 }
-#saveButton {
+#updateButton {
     background-color: lightgray;
     padding: 10px 100px;
 }

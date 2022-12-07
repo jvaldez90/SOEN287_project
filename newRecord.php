@@ -9,28 +9,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $a1 = $_POST['assignment_1'];
     $a2 = $_POST['assignment_2'];
     $a3 = $_POST['assignment_3'];
-    $midterm = $_POST['Midterm'];
-    $final = $_POST['final_exam'];
+    $midterm = $_POST['midterm'];
+    $final_exam = $_POST['final_exam'];
     $average = $_POST['average'];
     $grade = $_POST['final_grade'];
 
     if(!empty($name) && !is_numeric($name)){
-        $average = NULL;
         $grade = NULL;
         // If all assignment scores are not set by user, then set everything to 0
-        if(empty($a1) && empty($a2) && empty($a3) && empty($midterm) && empty($final)){
+        if(empty($a1) && empty($a2) && empty($a3) && empty($midterm) && empty($final_exam)){
             $a1 = 0;
             $a2 = 0;
             $a3 = 0;
             $midterm = 0;
             $final = 0;
         }
-        // Save to database table grade_records
-        $query = "INSERT INTO grade_records (name, assignment_1, assignment_2, assignment_3, midterm, final_exam, average, final_grade) VALUES ('$name', '$a1', '$a2', '$a3', '$midterm', '$final', '$average', '$grade')";
+        // Calculate the Average of a single student to be INSERTed into database
+        $average = ($a1 + $a2 + $a3+ $midterm + $final_exam)/5;
 
-        mysqli_query($conn, $query);        
-        echo "New Record has been saved";
+        // Save to database table grade_records
+        $query = "INSERT INTO grade_records (name, assignment_1, assignment_2, assignment_3, midterm, final_exam, average) VALUES ('$name', '$a1', '$a2', '$a3', '$midterm', '$final_exam', '$average')";
+        echo mysqli_query($conn, $query);        
         header("Location: indexLogin.php");
+        echo "New Record has been saved";
         die;
 
     }else {
@@ -66,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                     <input id="assignment_3" name="assignment_3" type="text">
                 </div><br/>
                 <div id="midterm">Midterm Test:
-                    <input id="Midterm" name="Midterm" type="text">
+                    <input id="midterm" name="midterm" type="text">
                 </div><br/>
                 <div id="final">Final Exam:
                     <input id="final_exam" name="final_exam" type="text">

@@ -99,28 +99,29 @@
                         if($result && mysqli_num_rows($result) > 0){
                             while($row = mysqli_fetch_assoc($result)){
                                 // Store each row data into a url query parameters
+                                $id = $row['id'];
                                 $name = $row['name'];
                                 $a1 = $row['assignment_1'];
                                 $a2 = $row['assignment_2'];
                                 $a3 = $row['assignment_3'];
                                 $midterm = $row['midterm'];
                                 $final_exam = $row['final_exam'];
-                                $url = "./editRecord.php?name=$name&assignment_1=$a1&assignment_2=$a2&assignment_3=$a3&midterm=$midterm&final_exam=$final_exam";
-                                // Calculate Average for each row in table
-                                $average = ($row['assignment_1'] + $row['assignment_2'] + $row['assignment_3']+ $row['midterm']+$row['final_exam'])/5;                            
+                                $average = $row['average'];
+                                $url = "./editRecord.php?id=$id&name=$name&assignment_1=$a1&assignment_2=$a2&assignment_3=$a3&midterm=$midterm&final_exam=$final_exam";
+                                
                                 // Display grade_records table to user
                                 echo "<tr>" .
-                                "<td>". $row['name']."</td>".
-                                "<td>". $row['assignment_1']."</td>".
-                                "<td>". $row['assignment_2']."</td>".
-                                "<td>". $row['assignment_3']."</td>".
-                                "<td>". $row['midterm']."</td>".
-                                "<td>". $row['final_exam']."</td>".
+                                "<td>". $name."</td>".
+                                "<td>". $a1."</td>".
+                                "<td>". $a2."</td>".
+                                "<td>". $a3."</td>".
+                                "<td>". $midterm."</td>".
+                                "<td>". $final_exam."</td>".
                                 "<td>". number_format($average, 2)."%</td>".
                                 "<td>". $row['final_grade']."</td>".
                                 "<td>
-                                <button id=\"editButton\" onclick=\"location.href='$url';\" value=\"editRecord\">Edit</button>
-                                <button id=\"deleteButton\" value=\"delete\">Delete</button></td>".
+                                <button id=\"editButton\" onclick=\"location.href='$url'\" value=\"editRecord\">Edit</button>
+                                <button id=\"deleteButton\" onclick=\"location.href='./delete.php?delete_id=$id'\" value=\"delete\">Delete</button></td>".
                                 "</tr>";
                             }
                         }
