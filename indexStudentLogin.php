@@ -29,7 +29,7 @@
                 <p>Logged in as: <?php echo $user_data['name'];?></p>
             </div>
             <div id="addButtons">
-                <button onclick="location.href='./indexStats.php';" value="indexStats">View Statistics</button>
+                <!-- <button onclick="location.href='./indexStats.php';" value="indexStats">View Statistics</button> -->
                 <button onclick="location.href='./logout.php';" value="logout">Sign Out</button>
             </div>
             <br/>
