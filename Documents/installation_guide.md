@@ -17,6 +17,6 @@ OR
 - Step 3) Click "Explorer" to the right of the UI
 - Step 4) Open the "htdocs" folder
 - Step 5) Move all html, php, css, and sql files from the SOEN287_project folder into the htdocs folder
-- Step 6) Open your internet browser and type "localhost/login.html" to access the login file
-- From there you may login and navigate through the webpages. If you wish to access any specific page type "localhost/example.html" 
+- Step 6) Open your internet browser and type "localhost/login.php" to access the login file
+- From there you may login and navigate through the webpages. If you wish to access any specific page type "localhost/example.php" 
   (replace example with the file you wish to view)
