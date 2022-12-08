@@ -28,7 +28,7 @@
             <div><a href="./indexStudentLogin.php"><p>Student Page View</p></a></div>
             <div id="addButtons">
                 <button onclick="location.href='./newRecord.php';" value="newRecord">Add New Student</button>
-                <button onclick="location.href='./indexStats.php';" value="indexStats">View Statistics</button>
+                <!-- <button onclick="location.href='./indexStats.php';" value="indexStats">View Statistics</button> -->
                 <button onclick="location.href='./logout.php';" value="logout">Sign Out</button>
             </div>
             <br/>
@@ -46,51 +46,7 @@
                         <th></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Barry</td>
-                        
-                        <td id="A1Barry">87</td><!--A1-->
-                        <td id="A2Barry">25</td><!--A2-->
-                        <td id="A3Barry">80</td><!--A3-->
-                        <td id="MidTerm_Barry">75</td><!--Midterm-->
-                        <td id="FinalExam_Barry">72</td><!--Final-->
-                        <td id="avgBarry"></td><!--Average-->
-                        <td id="letterGradeB"></td> <!--Final Grade-->
-                        <td>
-                            <button id="editButton" onclick="location.href='./editRecord.html';" value="editRecord">Edit</button>
-                            <button id="deleteButton" value="delete">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Oliver</td>
-                        <td id ="A1Oliver">88</td><!--A1-->
-                        <td id ="A2Oliver">75</td><!--A2-->
-                        <td id ="A3Oliver">79</td><!--A3-->
-                        <td id="MidTerm_Oliver">75</td><!--Midterm-->
-                        <td id="FinalExam_Oliver">75</td><!--Final-->
-                        <td id="avgOliver"></td><!--Average-->
-                        <td id ="letterGradeO"></td>
-                        <td>
-                            <button id="editButton" onclick="location.href='./editRecord.html';" value="editRecord">Edit</button>
-                            <button id="deleteButton" value="delete">Delete</button> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Kara</td>
-                        <td id ="A1Kara">91</td><!--A1-->
-                        <td id ="A2Kara">90</td><!--A2-->
-                        <td id ="A3Kara">95</td><!--A3-->
-                        <td id ="MidTerm_Kara">90</td><!--Midterm-->
-                        <td id ="FinalExam_Kara">85</td><!--Final-->
-                        <td id ="avgKara"></td><!--Average-->
-                        <td id ="letterGradeK"></td>
-                        <td>
-                            <button id="editButton" onclick="location.href='./editRecord.html';" value="editRecord">Edit</button>
-                            <button id="deleteButton" value="delete">Delete</button>
-                        </td>
-                    </tr>
-                    
+                <tbody>                    
                     <!-- Generate data of list of students from grade_records table -->
                     <?php                        
                         $query = "SELECT * FROM grade_records";
@@ -189,12 +145,12 @@
                     </tr>
                     <tr>
                         <td><pre></pre></td>
-                        <td id ="AvgA1"></td>
-                        <td id ="AvgA2"></td>
-                        <td id ="AvgA3"></td>
-                        <td id ="AvgMidterm"></td>
-                        <td id ="avgFinal"></td>
-                        <td></td>
+                        <td></td><!--A1-->
+                        <td></td><!--A2-->
+                        <td></td><!--A3-->
+                        <td></td><!--midterm-->
+                        <td></td><!--Final-->
+                        <td></td><!--Average-->
                         <td></td>
                         <td></td>
                     </tr>
